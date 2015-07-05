@@ -72,7 +72,7 @@ final_table = merge(parameter_table, summary_df, by = "run_code")
 # order it based on performance values
 #~ final_table = final_table[order(final_table$general_performance), ]
 final_table = final_table[order(-final_table$general_performance), ]
-final_table[1:15,]
+final_table[1:40,]
 
 write.table(final_table,file = "scatterplot_july_2015.txt", col.names=TRUE,row.names=FALSE,sep=";")
 
