@@ -26,4 +26,6 @@ baseflow_deviation = mean(baseflow_deviation_relative, na.rm = FALSE)
 #
 general_performance = average_ns_discharge / (baseflow_deviation)
 
+print(average_ns_discharge)
+print(baseflow_deviation)
 print(general_performance)
