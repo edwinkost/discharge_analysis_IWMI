@@ -41,9 +41,9 @@ startDate = None # "1960-01-31" #YYYY-MM-DD # None
 endDate   = None # "2010-12-31" #YYYY-MM-DD # None 
 
 # optional: For IWMI project, option to either calibration or validation stations
-station_type = None
+station_type = ""
 if len(sys.argv) > 2: station_type = str(sys.argv[2])
-
+print station_type
 
 # directory for GRDC files:
 #~ globalDirectoryGRDC = "/projects/wtrcycle/users/edwinhs/observation_data/IWMI_calibration/monthly_discharge/for_calibration/"
@@ -71,8 +71,8 @@ def main():
     ####################################################################################################
     #
     # make analysisOutputDir
-    analysisOutputDir = globalAnalysisOutputDir+"/calibration/monthly_discharge/"
-    if station_type != None: analysisOutputDir = globalAnalysisOutputDir+"/"+station_type+"/monthly_discharge/"
+    #~ analysisOutputDir = globalAnalysisOutputDir+"/calibration/monthly_discharge/"
+    analysisOutputDir = globalAnalysisOutputDir+"/"+station_type+"/monthly_discharge/"
     try:
         os.makedirs(analysisOutputDir) 
     except:
@@ -110,8 +110,8 @@ def main():
     ####################################################################################################
     #
     # make analysisOutputDir
-    analysisOutputDir = globalAnalysisOutputDir+"/calibration/annual_baseflow/"
-    if station_type != None: analysisOutputDir = globalAnalysisOutputDir+"/"+station_type+"/annual_baseflow/"
+    #~ analysisOutputDir = globalAnalysisOutputDir+"/calibration/annual_baseflow/"
+    analysisOutputDir = globalAnalysisOutputDir+"/"+station_type+"/annual_baseflow/"
     try:
         os.makedirs(analysisOutputDir) 
     except:

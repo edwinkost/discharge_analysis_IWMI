@@ -75,3 +75,5 @@ python 0_main_analyze_discharge.py /scratch/edwin/30min_22_jun_2015/rerun_for_iw
 python 0_main_analyze_discharge.py /scratch/edwin/30min_22_jun_2015/rerun_for_iwmi/calibration_27_june_2015/code__a__72 calibration &
 python 0_main_analyze_discharge.py /scratch/edwin/30min_22_jun_2015/rerun_for_iwmi/calibration_27_june_2015/code__a__73 calibration &
 python 0_main_analyze_discharge.py /scratch/edwin/30min_22_jun_2015/rerun_for_iwmi/calibration_27_june_2015/code__a__74 calibration &
+wait
+
