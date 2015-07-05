@@ -79,7 +79,7 @@ def main():
     #
     # make analysisOutputDir
     analysisOutputDir = globalAnalysisOutputDir+"/calibration/monthly_discharge/"
-    if station_type =! None: analysisOutputDir = globalAnalysisOutputDir+"/"+station_type+"/monthly_discharge/"
+    if station_type != None: analysisOutputDir = globalAnalysisOutputDir+"/"+station_type+"/monthly_discharge/"
     try:
         os.makedirs(analysisOutputDir) 
     except:
@@ -111,7 +111,7 @@ def main():
     #
     # make analysisOutputDir
     analysisOutputDir = globalAnalysisOutputDir+"/calibration/annual_baseflow/"
-    if station_type =! None: analysisOutputDir = globalAnalysisOutputDir+"/"+station_type+"/annual_baseflow/"
+    if station_type != None: analysisOutputDir = globalAnalysisOutputDir+"/"+station_type+"/annual_baseflow/"
     try:
         os.makedirs(analysisOutputDir) 
     except:
