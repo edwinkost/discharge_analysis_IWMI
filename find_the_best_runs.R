@@ -25,7 +25,7 @@ ns_discharge[which(ns_discharge < 0.00)] = 0.00
 average_ns_discharge = mean(ns_discharge, na.rm = TRUE)
 #
 baseflow_deviation_relative = abs(baseflow_table$avg_baseflow_deviation/baseflow_table$average_iwmi_opt_baseflow)
-baseflow_deviation_relative[which(baseflow_deviation_relative > 1.00)] = 1.00
+baseflow_deviation_relative[which(baseflow_deviation_relative > 1.50)] = 1.50
 baseflow_deviation = mean(baseflow_deviation_relative, na.rm = TRUE)
 baseflow_deviation = floor(baseflow_deviation*10)/10
 #
@@ -70,7 +70,7 @@ final_table = merge(parameter_table, summary_df, by = "run_code")
 # order it based on performance values
 #~ final_table = final_table[order(final_table$general_performance), ]
 final_table = final_table[order(-final_table$general_performance), ]
-final_table[1:75,]
+final_table[1:15,]
 
 write.table(final_table,file = "scatterplot_july_2015.txt", col.names=TRUE,row.names=FALSE,sep=";")
 
