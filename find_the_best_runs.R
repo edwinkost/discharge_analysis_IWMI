@@ -25,14 +25,14 @@ ns_discharge[which(ns_discharge < 0.00)] = 0.00
 average_ns_discharge = mean(ns_discharge, na.rm = TRUE)
 #
 baseflow_deviation_relative = abs(baseflow_table$avg_baseflow_deviation/baseflow_table$average_iwmi_opt_baseflow)
-baseflow_deviation_relative[which(baseflow_deviation_relative > 1.50)]   = 1.50
-baseflow_deviation_relative[which(is.na(baseflow_deviation_relative) )]  = 1.50
-baseflow_deviation_relative[which(is.nan(baseflow_deviation_relative) )] = 1.50
+baseflow_deviation_relative[which(baseflow_deviation_relative > 1.00)]   = 1.00
+baseflow_deviation_relative[which(is.na(baseflow_deviation_relative) )]  = 1.00
+baseflow_deviation_relative[which(is.nan(baseflow_deviation_relative) )] = 1.00
 baseflow_deviation = mean(baseflow_deviation_relative, na.rm = FALSE)
 baseflow_deviation = floor(baseflow_deviation*10)/10
 #
-#~ general_performance = average_ns_discharge / (baseflow_deviation)
-general_performance = mean(ns_discharge/(1+ baseflow_deviation))
+general_performance = average_ns_discharge / (baseflow_deviation)
+#~ general_performance = mean(ns_discharge/(1+ baseflow_deviation))
 
 if (first_run_to_be_analyzed == TRUE) {
 summary = cbind(run_code, average_ns_discharge, baseflow_deviation, general_performance)
