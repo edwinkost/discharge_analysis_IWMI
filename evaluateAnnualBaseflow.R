@@ -89,7 +89,16 @@ simulation$date      = paste(substr(as.character(modelTable[,1]), 1,4),"-01-01",
 simulation$date      = as.Date(simulation$date,"%Y-%m-%d")
 
 # load the baseflow data provided by IWMI
-iwmiTableOriginal <- read.table(grdcFile,header=F,skip=17)                                         # assume that there are 17 lines to be skipped
+#
+# - old method (assume that there are 17 lines to be skipped)
+#~ iwmiTableOriginal <- read.table(grdcFile,header=F,skip=17) 
+#
+# - new method: identify the line where the data starts
+# -- read the file and identify the line where the data start
+iwmi_baseflow_all_lines = as.matrix(read.table(grdcFile,header=F,sep="\n",colClasses="character"))
+start_line = which(grepl('yyyy', iwmi_baseflow_all_lines))
+# -- read the table
+iwmiTableOriginal <- read.table(grdcFile,header=F,skip=start_line)
 #
 names(iwmiTableOriginal)[1] <- "date"
 names(iwmiTableOriginal)[2] <- "annual_discharge"        # unit: m3/year
