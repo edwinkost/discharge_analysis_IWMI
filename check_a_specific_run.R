@@ -1,6 +1,7 @@
 
 # folder for a specific scenario
 folder = "/scratch/edwin/IWMI_calibration/version_01_dec_2014/uncalibrated/code__a__0/analysis/calibration/"
+folder = "/scratch/edwin/30min_22_jun_2015/rerun_for_iwmi/calibration_27_june_2015/code__a__0/analysis/calibration/"
 
 # read table containing discharge analysis
 discharge_table_file = paste(folder, "monthly_discharge/summary.txt", sep="") 
@@ -25,3 +26,4 @@ baseflow_deviation = mean(baseflow_deviation_relative, na.rm = FALSE)
 #
 general_performance = average_ns_discharge / (baseflow_deviation)
 
+print general_performance
