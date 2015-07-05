@@ -40,15 +40,22 @@ except:
 startDate = None # "1960-01-31" #YYYY-MM-DD # None 
 endDate   = None # "2010-12-31" #YYYY-MM-DD # None 
 
+# optional: For IWMI project, option to either calibration or validation stations
+station_type = None
+if len(sys.argv) > 2: station_type = str(sys.argv[2])
+
+
 # directory for GRDC files:
 #~ globalDirectoryGRDC = "/projects/wtrcycle/users/edwinhs/observation_data/IWMI_calibration/monthly_discharge/for_calibration/"
 #~ globalDirectoryGRDC = "/scratch/edwin/observation_data/IWMI_calibration/monthly_discharge/for_validation/"
-globalDirectoryGRDC = "/scratch/edwin/observation_data/IWMI_calibration/monthly_discharge/for_calibration/"
+#~ globalDirectoryGRDC = "/scratch/edwin/observation_data/IWMI_calibration/monthly_discharge/for_calibration/"
+globalDirectoryGRDC = "/scratch/edwin/observation_data/IWMI_calibration/monthly_discharge/for_"+station_type
 
 # directory for baseflow files:
 #~ baseflowFolderIWMI  = "/projects/wtrcycle/users/edwinhs/observation_data/IWMI_calibration/annual_baseflow/for_calibration/"
 #~ baseflowFolderIWMI  = "/scratch/edwin/observation_data/IWMI_calibration/annual_baseflow/for_validation/"
-baseflowFolderIWMI  = "/scratch/edwin/observation_data/IWMI_calibration/annual_baseflow/for_calibration/"
+#~ baseflowFolderIWMI  = "/scratch/edwin/observation_data/IWMI_calibration/annual_baseflow/for_calibration/"
+baseflowFolderIWMI  = "/scratch/edwin/observation_data/IWMI_calibration/annual_baseflow/for_"+station_type
 
 # clone, ldd and cell area maps, for 30min results (of PCR-GLOBWB 2.0)
 globalCloneMapFileName = "/data/hydroworld/PCRGLOBWB20/input30min/global/Global_CloneMap_30min.map"
@@ -72,6 +79,7 @@ def main():
     #
     # make analysisOutputDir
     analysisOutputDir = globalAnalysisOutputDir+"/calibration/monthly_discharge/"
+    if station_type =! None: analysisOutputDir = globalAnalysisOutputDir+"/"+station_type+"/monthly_discharge/"
     try:
         os.makedirs(analysisOutputDir) 
     except:
@@ -103,6 +111,7 @@ def main():
     #
     # make analysisOutputDir
     analysisOutputDir = globalAnalysisOutputDir+"/calibration/annual_baseflow/"
+    if station_type =! None: analysisOutputDir = globalAnalysisOutputDir+"/"+station_type+"/annual_baseflow/"
     try:
         os.makedirs(analysisOutputDir) 
     except:
