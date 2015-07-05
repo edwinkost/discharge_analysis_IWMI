@@ -31,7 +31,8 @@ baseflow_deviation_relative[which(is.nan(baseflow_deviation_relative) )] = 1.50
 baseflow_deviation = mean(baseflow_deviation_relative, na.rm = FALSE)
 #~ baseflow_deviation = floor(baseflow_deviation*10)/10
 #
-general_performance = average_ns_discharge / (baseflow_deviation)
+#~ general_performance = average_ns_discharge / (baseflow_deviation)
+general_performance = mean(ns_discharge/baseflow_deviation)
 
 if (first_run_to_be_analyzed == TRUE) {
 summary = cbind(run_code, average_ns_discharge, baseflow_deviation, general_performance)
