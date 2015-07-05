@@ -65,13 +65,6 @@ cellAreaMapFileName    = "/data/hydroworld/PCRGLOBWB20/input30min/routing/cellar
 # the following is needed for evaluating model results with 5 arcmin resolution
 catchmentClassFileName = None 
 
-# temporary directory (note that it is NOT a good idea to store temporary files in the memory (/dev/shm))
-temporary_directory = globalAnalysisOutputDir+"/tmp/"
-try:
-    os.makedirs(temporary_directory) 
-except:
-    os.system('rm -r '+temporary_directory+"/*") # make sure that temporary directory is clean 
-
 def main():
 
     # discharge analysis
@@ -84,6 +77,13 @@ def main():
         os.makedirs(analysisOutputDir) 
     except:
         if cleanOutputDir == True: os.system('rm -r '+analysisOutputDir+"/*") 
+    #
+    # temporary directory (note that it is NOT a good idea to store temporary files in the memory (/dev/shm))
+    temporary_directory = analysisOutputDir+"/tmp/"
+    try:
+        os.makedirs(temporary_directory) 
+    except:
+        os.system('rm -r '+temporary_directory+"/*") # make sure that temporary directory is clean 
     #
     # logger object for discharge analysis
     logger = Logger(analysisOutputDir)
@@ -116,6 +116,13 @@ def main():
         os.makedirs(analysisOutputDir) 
     except:
         if cleanOutputDir == True: os.system('rm -r '+analysisOutputDir+"/*") 
+    #
+    # temporary directory (note that it is NOT a good idea to store temporary files in the memory (/dev/shm))
+    temporary_directory = analysisOutputDir+"/tmp/"
+    try:
+        os.makedirs(temporary_directory) 
+    except:
+        os.system('rm -r '+temporary_directory+"/*") # make sure that temporary directory is clean 
     #
     # logger object for baseflow analysis
     logger = Logger(analysisOutputDir)
