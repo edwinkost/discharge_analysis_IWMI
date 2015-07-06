@@ -28,7 +28,7 @@ baseflow_deviation_relative = abs(baseflow_table$avg_baseflow_deviation/baseflow
 baseflow_deviation_relative[which(baseflow_deviation_relative > 1.50)]   = 1.50
 baseflow_deviation_relative[which(is.na(baseflow_deviation_relative) )]  = 1.50
 baseflow_deviation_relative[which(is.nan(baseflow_deviation_relative) )] = 1.50
-baseflow_deviation = floor(baseflow_deviation*100)/100
+baseflow_deviation_relative = floor(baseflow_deviation_relative*100)/100
 baseflow_deviation = mean(baseflow_deviation_relative, na.rm = FALSE)
 #
 general_performance = average_ns_discharge / (1+baseflow_deviation)
