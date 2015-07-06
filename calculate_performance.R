@@ -1,7 +1,8 @@
 # function to calculate performance values
 
 ns_discharge = discharge_table$ns_efficiency
-ns_discharge[which(ns_discharge < 0.00)] = 0.00
+#~ ns_discharge[which(ns_discharge < 0.00)] = 0.00
+ns_discharge[which(ns_discharge < -1.00)] = -1.00
 average_ns_discharge = mean(ns_discharge, na.rm = TRUE)
 #
 baseflow_deviation_relative = abs(baseflow_table$avg_baseflow_deviation/baseflow_table$average_iwmi_opt_baseflow)
