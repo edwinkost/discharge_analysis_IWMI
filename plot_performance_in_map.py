@@ -22,6 +22,7 @@ station_catchment_map = pcr.readmap(station_catchment_file_name)
 
 # using R to prepare a pcraster table
 cmd = "R -f create_table_performance "+working_directory+" "+analysis_type
+os.system(cmd)
 
 # plot in the pcraster format
 performance = pcr.lookupscalar(working_directory+"/performance.txt", station_catchment_map)
