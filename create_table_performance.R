@@ -19,6 +19,10 @@ table = read.table(table_file_name,header=T,sep=";")
 if (analysis_type == "monthly_discharge") {table = data.frame(table$id_from_grdc, table$ns_efficiency)} else {print(analysis_type)}
 if (analysis_type == "annual_baseflow" )  {table = data.frame(table$id_from_grdc, table$avg_baseflow_deviation)} else {print(analysis_type)}
 
+# remove all NA and NAN
+table = table[which(!is.nan(table[,2])),]
+table = table[which( !is.na(table[,2])),]
+
 # sort the table
 table = table[order(table[,1]),]
 
