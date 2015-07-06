@@ -11,5 +11,5 @@ baseflow_deviation_relative[which(is.nan(baseflow_deviation_relative) )] = 1.50
 #~ baseflow_deviation_relative = floor(baseflow_deviation_relative*100)/100
 baseflow_deviation = mean(baseflow_deviation_relative, na.rm = FALSE)
 #
-general_performance = average_ns_discharge / (baseflow_deviation)
+general_performance = average_ns_discharge / (1 + baseflow_deviation)
 #~ general_performance = mean(ns_discharge/(1+ baseflow_deviation))
