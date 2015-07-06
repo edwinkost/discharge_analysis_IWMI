@@ -4,9 +4,9 @@ folder = "/scratch/edwin/IWMI_calibration/version_01_dec_2014/uncalibrated/code_
 folder = "/scratch/edwin/30min_22_jun_2015/rerun_for_iwmi/calibration_27_june_2015/code__a__0/analysis/calibration/"
 
 # folder is defined based on the system argument
-args <- commandArgs(trailingOnly = TRUE)
+args <- commandArgs()
 print(args)
-folder = as.character(args[1])
+folder = as.character(args[0])
 print(folder)
 
 # read table containing discharge analysis
