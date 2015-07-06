@@ -17,7 +17,7 @@ table = read.table(table_file_name,header=T,sep=";")
 
 # only using the relevant performance
 if (analysis_type == "monthly_discharge") {table = data.frame(table$id_from_grdc, table$ns_efficiency)} else {print(analysis_type)}
-if (analysis_type == "annual_baseflow" )  {table = data.frame(table$id_from_grdc, table$avg_baseflow_deviation)} else {print(analysis_type)}
+if (analysis_type == "annual_baseflow" )  {table = data.frame(table$id_from_grdc, table$avg_baseflow_deviation/table$average_iwmi_opt_baseflow)} else {print(analysis_type)}
 
 # remove all NA and NAN
 table = table[which(!is.nan(table[,2])),]
