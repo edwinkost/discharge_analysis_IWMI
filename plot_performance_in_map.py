@@ -7,7 +7,7 @@ import sys
 ldd_file_name = "/data/hydroworld/PCRGLOBWB20/input30min/routing/lddsound_30min.map"
 
 # set clone
-pcr.setclone(ldd_map)
+pcr.setclone(ldd_file_name)
 
 # working directory (obtained from the argument)
 working_directory = str(sys.argv[1]) 
