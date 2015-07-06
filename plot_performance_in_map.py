@@ -25,5 +25,5 @@ cmd = "R -f create_table_performance "+working_directory+" "+analysis_type
 
 # plot in the pcraster format
 performance = pcr.lookupscalar(working_directory+"/performance.txt", station_catchment_map)
-pcr.report(performance, "working_directory+"/performance.map")
+pcr.report(performance, working_directory+"/performance.map")
 
