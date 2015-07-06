@@ -6,7 +6,7 @@ folder = "/scratch/edwin/30min_22_jun_2015/rerun_for_iwmi/calibration_27_june_20
 # folder is defined based on the system argument
 args <- commandArgs()
 print(args)
-folder = as.character(args[0])
+folder = args[4]+"/"
 print(folder)
 
 # read table containing discharge analysis
