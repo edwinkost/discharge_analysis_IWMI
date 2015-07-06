@@ -21,7 +21,7 @@ if sys.argv[3] == "validation" : station_catchment_file_name = "station_map/vali
 station_catchment_map = pcr.readmap(station_catchment_file_name)
 
 # using R to prepare a pcraster table
-cmd = "R -f create_table_performance "+working_directory+" "+analysis_type
+cmd = "R -f create_table_performance.R "+working_directory+" "+analysis_type
 print cmd
 os.system(cmd)
 
