@@ -65,7 +65,8 @@ class DischargeEvaluation(object):
                 "rmse",                         
                 "mae",                          
                 "ns_efficiency",                
-                "ns_efficiency_log"]
+                "ns_efficiency_log",
+                "kling_gupta_eff"]
         #
         for key in self.grdc_dict_keys: self.attributeGRDC[key] = {}                     
 
@@ -503,14 +504,15 @@ class DischargeEvaluation(object):
                 nPairs          = float(performance[0])
                 avg_obs         = float(performance[1])
                 avg_sim         = float(performance[2])
-                NSeff           = float(performance[3])
-                NSeff_log       = float(performance[4])
-                rmse            = float(performance[5])
-                mae             = float(performance[6])
-                bias            = float(performance[7])
-                R2              = float(performance[8])
-                R2ad            = float(performance[9])
-                correlation     = float(performance[10])
+                KGE             = float(performance[3])
+                NSeff           = float(performance[4])
+                NSeff_log       = float(performance[5])
+                rmse            = float(performance[6])
+                mae             = float(performance[7])
+                bias            = float(performance[8])
+                R2              = float(performance[9])
+                R2ad            = float(performance[10])
+                correlation     = float(performance[11])
                 #
                 table_file_name = self.tableOutputDir+"/"+\
                                                           str(self.attributeGRDC["country_code"][str(id)])+"_"+\
@@ -537,6 +539,7 @@ class DischargeEvaluation(object):
                 nPairs          = "NA"
                 avg_obs         = "NA"
                 avg_sim         = "NA"
+                KGE             = "NA"
                 NSeff           = "NA"
                 NSeff_log       = "NA"
                 rmse            = "NA"
@@ -556,6 +559,7 @@ class DischargeEvaluation(object):
             self.attributeGRDC["num_of_month_pairs"][str(id)]  = nPairs               
             self.attributeGRDC["average_observation"][str(id)] = avg_obs            
             self.attributeGRDC["average_model"][str(id)]       = avg_sim                   
+            self.attributeGRDC["kling_gupta_eff"][str(id)]       = KGE                     
             self.attributeGRDC["ns_efficiency"][str(id)]       = NSeff                     
             self.attributeGRDC["ns_efficiency_log"][str(id)]   = NSeff_log            
             self.attributeGRDC["rmse"][str(id)]                = rmse                               
