@@ -106,44 +106,44 @@ def main():
     ####################################################################################################
     
 
-    # baseflow analysis
-    ####################################################################################################
-    #
-    # make analysisOutputDir
+    #~ # baseflow analysis
+    #~ ####################################################################################################
+    #~ #
+    #~ # make analysisOutputDir
     #~ analysisOutputDir = globalAnalysisOutputDir+"/calibration/annual_baseflow/"
-    analysisOutputDir = globalAnalysisOutputDir+"/"+station_type+"/annual_baseflow/"
-    try:
-        os.makedirs(analysisOutputDir) 
-    except:
-        if cleanOutputDir == True: os.system('rm -r '+analysisOutputDir+"/*") 
-    #
-    # temporary directory (note that it is NOT a good idea to store temporary files in the memory (/dev/shm))
-    temporary_directory = analysisOutputDir+"/tmp/"
-    try:
-        os.makedirs(temporary_directory) 
-    except:
-        os.system('rm -r '+temporary_directory+"/*") # make sure that temporary directory is clean 
-    #
-    # logger object for baseflow analysis
-    logger = Logger(analysisOutputDir)
-    #
-    # annual baseflow evaluation (based on baseflow data)
-    baseflowEvaluation = baseflowIWMI.BaseflowEvaluation(pcrglobwb_output["folder"],\
-                                                         startDate,endDate,temporary_directory)
-    # - get GRDC attributes of all stations 
-    #   (based on the previous analysis on monthly discharge)
-    baseflowEvaluation.get_grdc_attributes(dischargeEvaluation.attributeGRDC, baseflowFolderIWMI)
-    #
-    # - evaluate annual baseflow time series
-    pcrglobwb_output["netcdf_file_name"]     = "netcdf/accuBaseflow_annuaAvg_output.nc"
-    pcrglobwb_output["netcdf_variable_name"] = "accumulated_land_surface_baseflow"
-    baseflowEvaluation.evaluateAllBaseflowResults(globalCloneMapFileName,\
-                                                  catchmentClassFileName,\
-                                                  lddMapFileName,\
-                                                  cellAreaMapFileName,\
-                                                  pcrglobwb_output,\
-                                                  analysisOutputDir)  
-    ####################################################################################################
+    #~ analysisOutputDir = globalAnalysisOutputDir+"/"+station_type+"/annual_baseflow/"
+    #~ try:
+        #~ os.makedirs(analysisOutputDir) 
+    #~ except:
+        #~ if cleanOutputDir == True: os.system('rm -r '+analysisOutputDir+"/*") 
+    #~ #
+    #~ # temporary directory (note that it is NOT a good idea to store temporary files in the memory (/dev/shm))
+    #~ temporary_directory = analysisOutputDir+"/tmp/"
+    #~ try:
+        #~ os.makedirs(temporary_directory) 
+    #~ except:
+        #~ os.system('rm -r '+temporary_directory+"/*") # make sure that temporary directory is clean 
+    #~ #
+    #~ # logger object for baseflow analysis
+    #~ logger = Logger(analysisOutputDir)
+    #~ #
+    #~ # annual baseflow evaluation (based on baseflow data)
+    #~ baseflowEvaluation = baseflowIWMI.BaseflowEvaluation(pcrglobwb_output["folder"],\
+                                                         #~ startDate,endDate,temporary_directory)
+    #~ # - get GRDC attributes of all stations 
+    #~ #   (based on the previous analysis on monthly discharge)
+    #~ baseflowEvaluation.get_grdc_attributes(dischargeEvaluation.attributeGRDC, baseflowFolderIWMI)
+    #~ #
+    #~ # - evaluate annual baseflow time series
+    #~ pcrglobwb_output["netcdf_file_name"]     = "netcdf/accuBaseflow_annuaAvg_output.nc"
+    #~ pcrglobwb_output["netcdf_variable_name"] = "accumulated_land_surface_baseflow"
+    #~ baseflowEvaluation.evaluateAllBaseflowResults(globalCloneMapFileName,\
+                                                  #~ catchmentClassFileName,\
+                                                  #~ lddMapFileName,\
+                                                  #~ cellAreaMapFileName,\
+                                                  #~ pcrglobwb_output,\
+                                                  #~ analysisOutputDir)  
+    #~ ####################################################################################################
     
 
 if __name__ == '__main__':
