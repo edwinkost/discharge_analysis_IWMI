@@ -229,7 +229,6 @@ R2          =        R2_function(mergedTable$observation, mergedTable$simulation
 R2ad        =      R2ad_function(mergedTable$observation, mergedTable$simulation)
 correlation =                cor(mergedTable$observation, mergedTable$simulation, use = "na.or.complete")
 #
-performance = c(nPairs,avg_obs,avg_sim,KGE,NSeff,NSeff_log,rmse,mae,bias,R2,R2ad,correlation)
 performance_character = paste(nPairs,avg_obs,avg_sim,KGE_2009,KGE_2012,NSeff,NSeff_log,rmse,mae,bias,R2,R2ad,correlation,sep=";")
 
 # saving model performance to outputFile (in the memory)
