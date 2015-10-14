@@ -275,10 +275,10 @@ outplott <- outplott +
  geom_text(aes(x = x_info_text, y = 0.60*y_max, label = attributeStat[9]), size = 2.5,hjust = 0) +
 #
  geom_text(aes(x = x_info_text, y = 0.55*y_max, label = paste(" nPairs = ",     round(nPairs ,2),sep="")), size = 2.5,hjust = 0) +
- geom_text(aes(x = x_info_text, y = 0.50*y_max, label = paste(" avg obs/sim = ",round(avg_obs,2),"/",round(avg_sim,2)sep="")), size = 2.5,hjust = 0) +
+ geom_text(aes(x = x_info_text, y = 0.50*y_max, label = paste(" avg obs/sim = ",round(avg_obs,2),"/",round(avg_sim,2),sep="")), size = 2.5,hjust = 0) +
 #
- geom_text(aes(x = x_info_text, y = 0.40*y_max, label = paste(" KGE_2009 = ", round(KGE_2009,2),sep="")), size = 2.5,hjust = 0) +
- geom_text(aes(x = x_info_text, y = 0.40*y_max, label = paste(" KGE_2012 = ", round(KGE_2012,2),sep="")), size = 2.5,hjust = 0) +
+ geom_text(aes(x = x_info_text, y = 0.45*y_max, label = paste(" KGE_2009 = ",   round(KGE_2009   ,2),sep="")), size = 2.5,hjust = 0) +
+ geom_text(aes(x = x_info_text, y = 0.40*y_max, label = paste(" KGE_2012 = ",   round(KGE_2012   ,2),sep="")), size = 2.5,hjust = 0) +
 #
  geom_text(aes(x = x_info_text, y = 0.35*y_max, label = paste(" NSeff = ",      round(NSeff      ,2),sep="")), size = 2.5,hjust = 0) +
  geom_text(aes(x = x_info_text, y = 0.30*y_max, label = paste(" NSeff_log = ",  round(NSeff_log  ,2),sep="")), size = 2.5,hjust = 0) +
