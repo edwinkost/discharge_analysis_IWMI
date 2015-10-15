@@ -40,7 +40,7 @@ startDate = None # "1960-01-31" #YYYY-MM-DD # None
 endDate   = None # "2010-12-31" #YYYY-MM-DD # None 
 
 # directory for GRDC files:
-globalDirectoryGRDC = "/scratch/edwin/observation_data/pcrglobwb_sensitivity_analysis/grdc_monthly_discharge/"
+globalDirectoryGRDC = "/scratch-shared/edwin/observation_data/pcrglobwb_sensitivity_analysis/grdc_monthly_discharge/"
 
 # clone, ldd and cell area maps, for 30min results (of PCR-GLOBWB 2.0)
 globalCloneMapFileName = "/projects/0/dfguu/data/hydroworld/PCRGLOBWB20/input30min/global/Global_CloneMap_30min.map"
