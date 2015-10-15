@@ -39,17 +39,8 @@ except:
 startDate = None # "1960-01-31" #YYYY-MM-DD # None 
 endDate   = None # "2010-12-31" #YYYY-MM-DD # None 
 
-# optional: For IWMI project, option to either calibration or validation stations
-station_type = ""
-if len(sys.argv) > 2: station_type = str(sys.argv[2])
-print station_type
-
 # directory for GRDC files:
-#~ globalDirectoryGRDC = "/projects/wtrcycle/users/edwinhs/observation_data/IWMI_calibration/monthly_discharge/for_calibration/"
-#~ globalDirectoryGRDC = "/scratch/edwin/observation_data/IWMI_calibration/monthly_discharge/for_validation/"
-#~ globalDirectoryGRDC = "/scratch/edwin/observation_data/IWMI_calibration/monthly_discharge/for_calibration/"
-#~ globalDirectoryGRDC = "/scratch/edwin/observation_data/IWMI_calibration/monthly_discharge/for_"+station_type
-globalDirectoryGRDC = "/scratch-shared/edwin/observation_data/IWMI_calibration/monthly_discharge/for_"+station_type
+globalDirectoryGRDC = "/scratch/edwin/observation_data/pcrglobwb_sensitivity_analysis/grdc_monthly_discharge/"
 
 # clone, ldd and cell area maps, for 30min results (of PCR-GLOBWB 2.0)
 globalCloneMapFileName = "/projects/0/dfguu/data/hydroworld/PCRGLOBWB20/input30min/global/Global_CloneMap_30min.map"
@@ -65,8 +56,7 @@ def main():
     ####################################################################################################
     #
     # make analysisOutputDir
-    #~ analysisOutputDir = globalAnalysisOutputDir+"/calibration/monthly_discharge/"
-    analysisOutputDir = globalAnalysisOutputDir+"/"+station_type+"/monthly_discharge/"
+    analysisOutputDir = globalAnalysisOutputDir+"/monthly_discharge/"
     try:
         os.makedirs(analysisOutputDir) 
     except:
