@@ -3,10 +3,9 @@ import re
 import glob
 import datetime
 
-import netCDF4 as nc
 import numpy as np
-
 import pcraster as pcr
+import netCDF4 as nc
 
 import virtualOS as vos
 
